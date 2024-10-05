@@ -1,3 +1,19 @@
+# gRPCの主な特徴
+* 言語、プラットフォーム、OSに依存しない
+* インターフェース定義によるスキーマ駆動開発
+* 効率がいい（高速、通信量が小さい）
+  * HTTP/2による通信：ストリーム、ヘッダー圧縮
+  * バイナリ通信
+* （HTTP/2を利用した）複数の通信方法
+  * Unary RPCs（SimpleRPC)
+  * Server Streaming RPC（1リクエスト、複数レスポンス）
+  * Client Streaming RPC（複数リクエスト、1レスポンス）
+  * Bidirectional Streaming RPC（双方向通信）
+* RESTfulやgraphQLとの違い
+  * スキーマ駆動、型付けしたインターフェース
+  * サービス指向（RESTful：リソース指向、GraphQL：データ/クエリ指向）
+  * HTTP/2なので、通信自体が高速/高効率  
+
 # 構成図
 ![スクリーンショット 2024-10-05 20 17 09](https://github.com/user-attachments/assets/580be15d-6228-499d-b320-ece2828a068d)
 

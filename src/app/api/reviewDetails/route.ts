@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const res = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50061 review.ReviewService.GetReviewsFromTenpo`).toString()
+    const res = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50061 review.ReviewService.GetReviewsFromTenpo`).toString()
     const parsedRes = JSON.parse(res) as { reviews: Array<{ tenpo: string; nickname: string; content: string; rating: number }> }
 
     if (!parsedRes?.reviews) {
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
   try {
     execSync(
-      `grpcurl -plaintext -d '{"tenpo": "${productSlug}", "nickname": "${nickname}", "rating": ${rating}, "content": "${content}"}' 57.180.8.59:50061 review.ReviewService.CreateReview`
+      `grpcurl -plaintext -d '{"tenpo": "${productSlug}", "nickname": "${nickname}", "rating": ${rating}, "content": "${content}"}' localhost:50061 review.ReviewService.CreateReview`
     )
     return NextResponse.json({ message: 'OK' }, { status: 200 })
   } catch (error) {

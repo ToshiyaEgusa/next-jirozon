@@ -37,17 +37,17 @@ export async function GET(request: Request) {
   }
 
   try {
-    const menRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50056 men.MenService.GetMen`).toString()
+    const menRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50056 men.MenService.GetMen`).toString()
     const parsedMenRes = JSON.parse(menRes) as MenResponse
-    const soupRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50052 soup.SoupService.GetSoup`).toString()
+    const soupRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50052 soup.SoupService.GetSoup`).toString()
     const parsedSoupRes = JSON.parse(soupRes) as SoupResponse
-    const butaRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50054 buta.ButaService.GetButa`).toString()
+    const butaRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50054 buta.ButaService.GetButa`).toString()
     const parsedButaRes = JSON.parse(butaRes) as ButaResponse
-    const ninnikuRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50053 ninniku.NinnikuService.GetNinniku`).toString()
+    const ninnikuRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50053 ninniku.NinnikuService.GetNinniku`).toString()
     const parsedNinnikuRes = JSON.parse(ninnikuRes) as NinnikuResponse
-    const yasaiRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50055 yasai.YasaiService.GetYasai`).toString()
+    const yasaiRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50055 yasai.YasaiService.GetYasai`).toString()
     const parsedYasaiRes = JSON.parse(yasaiRes) as YasaiResponse
-    const aburaRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50051 abura.AburaService.GetAbura`).toString()
+    const aburaRes = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50051 abura.AburaService.GetAbura`).toString()
     const parsedAburaRes = JSON.parse(aburaRes) as AburaResponse
 
     return NextResponse.json({

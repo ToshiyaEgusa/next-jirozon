@@ -52,7 +52,7 @@ class ServerImpl < Men::MenService::Service
 end
 
 server = GRPC::RpcServer.new
-server.add_http2_port('0.0.0.0:50053', :this_port_is_insecure)
-puts 'start server on Men port 50053'
+server.add_http2_port('0.0.0.0:50056', :this_port_is_insecure)
+puts 'start server on Men port 50056'
 server.handle(ServerImpl.new)
 server.run_till_terminated_or_interrupted([1, 'int', 'SIGQUIT'])

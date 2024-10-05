@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const res = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' 57.180.8.59:50063 history.HistoryService.GetHistory`).toString()
+    const res = execSync(`grpcurl -plaintext -d '{"tenpo": "${productSlug}"}' localhost:50063 history.HistoryService.GetHistory`).toString()
     const parsedRes = JSON.parse(res) as { historyList: Array<{ tenpo: string; volume: number }> }
 
     if (!parsedRes.historyList) {
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
   try {
     const res = execSync(
-      `grpcurl -plaintext -d '{"tenpo": "${productSlug}", "volume": ${volume}, "date": "${date}"}' 57.180.8.59:50063 history.HistoryService.CreateHistory`
+      `grpcurl -plaintext -d '{"tenpo": "${productSlug}", "volume": ${volume}, "date": "${date}"}' localhost:50063 history.HistoryService.CreateHistory`
     ).toString()
     const parsedRes = JSON.parse(res) as { tenpo: string; volume: number; date: string }
 

@@ -41,9 +41,9 @@ impl YasaiService for MyYasaiService {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!("Starting server on Yasai port 50051");
+    println!("Starting server on Yasai port 50055");
 
-    let addr = "127.0.0.1:50051".parse()?;
+    let addr = "localhost:50051".parse()?;
     let yasai_service = MyYasaiService::default();
 
     Server::builder()

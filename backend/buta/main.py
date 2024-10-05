@@ -21,9 +21,9 @@ class ButaServiceServicer(buta_pb_grpc.ButaServiceServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     buta_pb_grpc.add_ButaServiceServicer_to_server(ButaServiceServicer(), server)
-    server.add_insecure_port('[::]:50052')
+    server.add_insecure_port('[::]:50054')
     server.start()
-    print("start server on Buta port 50052")
+    print("start server on Buta port 50054")
     server.wait_for_termination()
 
 if __name__ == '__main__':

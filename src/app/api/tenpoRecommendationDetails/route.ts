@@ -16,7 +16,7 @@ export async function GET(request: Request) {
 
   try {
     const res = execSync(
-      `grpcurl -plaintext -d '{"tenpo": "${productSlug}", "size": "6"}' 57.180.8.59:50062 tenpoRecommend.TenpoRecommendService.GetTenpoRecommend`
+      `grpcurl -plaintext -d '{"tenpo": "${productSlug}", "size": "6"}' localhost:50062 tenpoRecommend.TenpoRecommendService.GetTenpoRecommend`
     ).toString()
     const parsedRes = JSON.parse(res) as TenpoRecommendResponse
     const allProducts = await Commerce.productBrowse({})

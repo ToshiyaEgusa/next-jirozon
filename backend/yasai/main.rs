@@ -19,7 +19,7 @@ impl YasaiService for MyYasaiService {
         request: Request<GetYasaiRequest>,
     ) -> Result<Response<GetYasaiResponse>, Status> {
 
-        let file = File::open("./src/yasai.json").unwrap();
+        let file = File::open("./yasai.json").unwrap();
         let reader = BufReader::new(file);
         let store: Value = serde_json::from_reader(reader).unwrap();
 

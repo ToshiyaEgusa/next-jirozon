@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "./men";
+
+package men;
+
+message GetMenRequest {
+  string tenpo = 1;
+}
+
+message GetMenResponse {
+  Men men = 1;
+}
+
+message Men {
+  string futosa = 1;
+  string katasa = 2;
+}
+
+service MenService {
+  rpc GetMen(GetMenRequest) returns (GetMenResponse) {}
+}

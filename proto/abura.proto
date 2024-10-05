@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./abura";
+
+package abura;
+
+message GetAburaRequest {
+  string tenpo = 1;
+}
+
+message GetAburaResponse {
+  string volume = 1;
+}
+
+service AburaService {
+  rpc GetAbura(GetAburaRequest) returns (GetAburaResponse) {}
+}

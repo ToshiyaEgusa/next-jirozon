@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "./history";
+
+package history;
+
+service HistoryService {
+  rpc GetHistory(GetHistoryRequest) returns (GetHistoryResponse) {}
+  rpc CreateHistory(CreateHistoryRequest) returns (CreateHistoryResponse) {}
+}
+
+message History {
+  int32 history_id = 1;
+  string tenpo = 2;
+  int32 volume = 3;
+  string date = 4;
+}
+
+message GetHistoryRequest {
+  string tenpo = 1;
+}
+
+message GetHistoryResponse {
+  repeated History historyList = 1;
+}
+
+message CreateHistoryRequest {
+  string tenpo = 1;
+  int32 volume = 2;
+  string date = 3;
+}
+
+message CreateHistoryResponse {}

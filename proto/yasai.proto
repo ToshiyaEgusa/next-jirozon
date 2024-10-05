@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./yasai";
+
+package yasai;
+
+message GetYasaiRequest {
+  string tenpo = 1;
+}
+
+message GetYasaiResponse {
+  string volume = 1;
+}
+
+service YasaiService {
+  rpc GetYasai(GetYasaiRequest) returns (GetYasaiResponse) {}
+}

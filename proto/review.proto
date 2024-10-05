@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "./review";
+
+package review;
+
+service ReviewService {
+  rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse);
+  rpc GetReviewsFromTenpo(GetReviewsFromTenpoRequest)
+      returns (GetReviewsFromTenpoResponse);
+}
+
+message Review {
+  int32 review_id = 1;
+  string tenpo = 2;
+  string nickname = 3;
+  string content = 4;
+  int32 rating = 5;
+}
+
+message CreateReviewRequest {
+  string tenpo = 1;
+  string nickname = 2;
+  string content = 3;
+  int32 rating = 4;
+}
+
+message CreateReviewResponse {
+  bool success = 1;
+}
+
+message GetReviewsFromTenpoRequest {
+  string tenpo = 1;
+}
+
+message GetReviewsFromTenpoResponse {
+  repeated Review reviews = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./ninniku";
+
+package ninniku;
+
+message GetNinnikuRequest {
+  string tenpo = 1;
+}
+
+message GetNinnikuResponse {
+  string volume = 1;
+}
+
+service NinnikuService {
+  rpc GetNinniku(GetNinnikuRequest) returns (GetNinnikuResponse) {}
+}

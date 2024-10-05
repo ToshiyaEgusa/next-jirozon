@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "./tenpoRecommend";
+
+package tenpoRecommend;
+
+service TenpoRecommendService {
+  rpc GetTenpoRecommend(GetTenpoRecommendRequest)
+      returns (GetTenpoRecommendResponse) {}
+}
+
+message GetTenpoRecommendRequest {
+  string tenpo = 1;
+  int32 size = 2;
+}
+
+message GetTenpoRecommendResponse {
+  repeated string tenpoList = 1;
+}

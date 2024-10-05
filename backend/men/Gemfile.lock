@@ -1,0 +1,25 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (3.1.8)
+    google-protobuf (4.28.2-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    googleapis-common-protos-types (1.16.0)
+      google-protobuf (>= 3.18, < 5.a)
+    grpc (1.66.0-arm64-darwin)
+      google-protobuf (>= 3.25, < 5.0)
+      googleapis-common-protos-types (~> 1.0)
+    grpc-tools (1.66.0)
+    rake (13.2.1)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  google-protobuf
+  grpc
+  grpc-tools
+
+BUNDLED WITH
+   2.4.21

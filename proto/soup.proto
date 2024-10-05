@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./soup";
+
+package soup;
+
+message GetSoupRequest {
+  string tenpo = 1;
+}
+
+message GetSoupResponse {
+  string volume = 1;
+}
+
+service SoupService {
+  rpc GetSoup(GetSoupRequest) returns (GetSoupResponse) {}
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./buta";
+
+package buta;
+
+message GetButaRequest {
+  string tenpo = 1;
+}
+
+message GetButaResponse {
+  int32 volume = 1;
+}
+
+service ButaService {
+  rpc GetButa(GetButaRequest) returns (GetButaResponse) {}
+}

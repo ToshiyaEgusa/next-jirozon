@@ -9,7 +9,7 @@
   * Server Streaming RPC（1リクエスト、複数レスポンス）
   * Client Streaming RPC（複数リクエスト、1レスポンス）
   * Bidirectional Streaming RPC（双方向通信）
-* RESTfulやgraphQLとの違い
+* RESTful APIやGraphQLとの違い
   * スキーマ駆動、型付けしたインターフェース
   * サービス指向（RESTful：リソース指向、GraphQL：データ/クエリ指向）
   * HTTP/2なので、通信自体が高速/高効率  

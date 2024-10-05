@@ -1,3 +1,6 @@
+# 構成図
+![スクリーンショット 2024-10-05 20 17 09](https://github.com/user-attachments/assets/580be15d-6228-499d-b320-ece2828a068d)
+
 # Your Next Store
 
 <div align="center">
